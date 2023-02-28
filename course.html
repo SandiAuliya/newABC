@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Course</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+
+        <style>
+  img {
+    margin: 5px;
+  }
+  .a {
+    max-width: 320px;
+    border: 3px solid #fff;
+    border-radius: 10px;
+  }
+  .b {
+    max-width: 320px;
+    border: 3px solid #fff;
+    border-radius: 10px;
+  }
+  .ab {
+    max-width: 320px;
+    height: 320px;
+    border: 3px solid #fff;
+    border-radius: 10px;
+  }
+  .ba {
+    max-width: 320px;
+    border: 3px solid #fff;
+    border-radius: 10px;
+  }
+  .background {
+    background-color: #f7c9a9;
+  }
+
+  .dl {
+    color: black;
+    background-color: #f7c9a9;
+  }
+  table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+    font-family: sans-serif;
+  }
+  td, th {
+    border: 1px solid brown;
+    padding: 5px;
+    text-align: center;
+  }
+  th {
+    background-color: lightgrey;
+  }
+  /* Memberi warna pada baris yg ganjil */
+   tr:nth-child(odd) {
+    background-color: whitesmoke;
+  } 
+  /* Memberi warna pada baris yg ganjil */
+  /* tr:nth-child(even) {
+    background-color: whitesmoke;
+  } */
+  tr:hover {
+    background-color: #f7c9a9;
+  }
+  .l {
+    background-image: url(background.avif);
+    background-position: bottom;
+  }
+
+    label {
+      display: block;
+      margin: 30px 0 0 0;
+    }
+    .overflow {
+      height: 200px;
+    }
+    
+    .widget a {
+      margin-left: 150px;
+    }
+    .widget h1 {
+      color: black;
+    }
+
+        </style>
+
+<!-- Ada masalah disini -->
+
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( ".widget a" ).button();
+    $( "a" ).on( "click", function( event ) {
+      event.preventDefault();
+    } );
+  } );
+  </script> -->
+    </head>
+
+    <body>
+        <div class="medsos">
+            <div class="container">
+                <ul>
+                    <li class="dropdown">
+                        <i id="logo" class="fa fa-graduation-cap"></i>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Contact</a>
+                        <div class="dropdown-content">
+                            <a href="mailto:sandi.say1203@gmail.com?Subject=Hello! I want to join course">Email</a>
+                            <a href="whatsapp://send?text=Phone = +6281339838379">Whatsapp</a>
+                        </div>
+                        </li>
+            
+                        <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Social Media</a>
+                        <div class="dropdown-content">
+                            <a href="https://www.youtube.com/@eduCLaaS">Youtube</a>
+                            <a href="https://www.instagram.com/educlaas.in/?hl=id">Instagram</a>
+                        </div>
+                        </li>
+        
+                </ul>
+            </div>
+        </div>
+        
+        
+        <header>
+            <div class="container">
+                <h1>ABC Learning Center</h1>
+                <ul>
+                    <li><a id="home" href="index.html">HOME</a></li>
+                    <li><a id="links" href="aboutus.html">ABOUT US</a></li>
+                    <li><a id="links" href="course.html">COURSE </a></li>
+                    <li><a id="links" href="privacy.html">PRIVACY</a></li>
+                    <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">ACCOUNT</a>
+                    <div class="dropdown-content">
+                        <a href="signup.html">Sign Up</a>
+                        <a href="signin.html">Sign in</a>
+                    </div>
+                    </li>
+                    <li><a id="links" href="sitemap.html">SITEMAP</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <div class="background">
+            <br>
+            <h1 class="title">COURSE</h1>
+            <br>
+            <hr>
+            <br>
+                <a href="java.html"><img class="a" src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1024/https://www.rumahcoding.co.id/wp-content/uploads/2020/11/Java-1024x1024.png"></a> 
+
+                <a href="web.html"><img class="b" src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1024/https://www.rumahcoding.co.id/wp-content/uploads/2020/11/Web-Design-1024x1024.png"></a> 
+
+                <a href="c.html"><img class="ab" src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_300/https://www.rumahcoding.co.id/wp-content/uploads/2020/01/c_c.png"></a> 
+
+                <a href="php.html"><img class="ba" src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1024/https://www.rumahcoding.co.id/wp-content/uploads/2020/11/PHP-1024x1024.png"></a> 
+               <br><br> 
+            
+            <!-- Ada masalah disini -->
+            <!-- <div class="widget">
+                <h1>Widget Buttons</h1>
+                <br><br>
+                <a href="java.html">Java Course</a>
+                <a href="web.html">Web Design Course</a>
+                <a href="c.html">C++ Course</a>
+                <a href="php.html">PHP Course</a> -->
+
+            </div> 
+          
+            <br><br><br>
+        </div>
+        <br><hr><hr><br>
+    <div class="l">
+        <h1 class="dl">Duration and Price</h1><br>
+        <table>
+            <!-- Judul kolok -->
+            <th>No</th>
+            <th>Course</th>
+            <th>Meet</th>
+            <th>Hours</th>
+            <th>Cash</th>
+            <th>Installment fee</th>
+
+            <!-- Baris data -->
+            <tr>
+                <td>1</td>
+                <td>Java Course</td>
+                <td>16 meet</td>
+                <td>1-1,5 hours</td>
+                <td>Rp 2.000.000</td>
+                <td>Rp 1.000.000</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Web Design Course</td>
+                <td>16 meet</td>
+                <td>1-1,5 hours</td>
+                <td>Rp 3.500.000</td>
+                <td>Rp 1.750.000</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>C++ Course</td>
+                <td>16 meet</td>
+                <td>1-1,5 hours</td>
+                <td>Rp 4.000.000</td>
+                <td>Rp 2.000.000</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>PHP Course</td>
+                <td>16 meet</td>
+                <td>1-1,5 hours</td>
+                <td>Rp 2.500.000</td>
+                <td>Rp 1.250.000</td>
+            </tr>
+        </table>
+        <br><br>
+        </div>
+
+
+        <br><br>
+
+        <!-- Footer -->
+        <div class="c">
+          <div class="h">
+              <!-- Posisi Header -->
+          </div>
+          <div class="footer">
+              <div class="row">
+                  <div class="footer-col">
+                      <h1 class="z">ABC L.C</h1>
+                      <br>
+                      <h4>Conatct Us</h4>
+                      <div class="social-links">
+                          <a href="https://www.youtube.com/@eduCLaaS"><i class="fab fa-youtube"></i></a>
+                          <a href="https://www.instagram.com/educlaas.in/?hl=id"><i class="fab fa-instagram"></i></a>
+                          <a href="https://www.facebook.com/eduCLaaSIndonesia/"><i class="fab fa-facebook"></i></a>
+                          <a href="whatsapp://send?text=Phone = +6281339838379"><i class="fab fa-whatsapp"></i></a>
+                          <!-- <a href="#"><i class="fab fa-linkedin-in"></i></a> -->
+                      </div>
+                      
+                  </div>
+    
+                  <div class="footer-col">
+                      <h4>About Us</h4>
+                      <ul>
+                          <li><a href="aboutus.html">Description</a></li>
+                          <li><a href="aboutus.html">Purpose</a></li>
+                          <li><a href="aboutus.html">Image and Video</a></li>
+                          <li><a href="aboutus.html">Location</a></li>
+                          <hr>
+                          <li><a href="#">Monday - Friday</a></li>
+                          <li><a href="#">08.00 - 21.00</a></li>
+                          <li><a href="#">Saturday</a></li>
+                          <li><a href="#">08.00 - 15.00</a></li>
+                      </ul>
+                  </div>
+    
+                  <div class="footer-col">
+                      <h4>Course</h4>
+                      <ul>
+                          <li><a href="course.html">Courses</a></li>
+                          <li><a href="course.html">Price</a></li>
+                          <li><a href="course.html">Schedule</a></li>
+                          <li><a href="course.html">Social Media</a></li>
+                          <hr>
+                          <li><a href="#">Jl. Sedap Malam Gg. Bugbugan No. 9</a></li>
+                          <li><a href="#">Kesiman Petilan Denpasar Timur</a></li>
+                          <li><a href="#">Bali Indonesia</a></li>
+                      </ul>
+                  </div>
+    
+                  <div class="footer-col">
+                      <h4>Why Choose Abc Learning Center</h4>
+                      <ul>
+                          <li><a href="#">Relaxed learning</a></li>
+                          <li><a href="#">Flexible time</a></li>
+                          <li><a href="#">Learn directly practice</a></li>
+                          <li><a href="#">Experienced teacher</a></li>
+                          <hr>
+                          <li><a href="privacy.html">Privacy Policy</a></li>
+                      </ul>
+                  </div>
+    
+              </div>
+              <center>
+              <p class="s"><b>Copyright © 2023 - Sandi Auliya. All Rights Reserved.</b></p>
+              </center>
+          </div>
+      </div>
+    </body>
+</html>

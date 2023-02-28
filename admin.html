@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CRUD operations using JSON and local storage in JavaScript</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+</head>
+<body>
+    <div class="container">
+        <h1>Crud operation in javascript using local storage</h1>
+        <br />
+        <fieldset>
+            <legend>
+                Users List
+            </legend>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>userId</th>
+                        <th>Full Name</th>
+                        <th>User Name</th>
+                        <th>Address</th>
+                        <th>City</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Password</th>
+                        <th>Confirm Password</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tblbody">
+                </tbody>
+            </table>
+        </fieldset>
+    </div>
+
+<script>
+
+    bindUserData();
+    function addUserDataToLocalStorage(userObj) {
+
+        //already has data in localstorage then update it other create new one
+        var users = JSON.parse(localStorage.getItem('userData'));
+        if (users != null) {
+            users.push(userObj);
+           
+            localStorage.setItem('userData', JSON.stringify(users));
+        }
+        else {
+            var userData = new Array();
+            userData.push(userObj);
+            localStorage.setItem('userData', JSON.stringify(userData));
+
+        }
+    }
+
+    function updateDataToLocalStorage(userObj) {
+
+        var users = JSON.parse(localStorage.getItem('userData'));
+        if (users != null) {
+            var user = users.filter((x) => x.id == userObj.id).pop();
+            if (user != null) {
+                user.fullname = userObj.fullname;
+                user.username = userObj.username;
+                user.address = userObj.address;
+                user.city = userObj.city;
+                user.email = userObj.email;
+                user.phone = userObj.phone;
+                user.password = userObj.password;
+                user.confirmpassword = userObj.confirmpassword;
+                user.date = userObj.date;
+            }
+            localStorage.setItem('userData', JSON.stringify(users));
+        }
+    }
+
+    function deletedataFromLocalStorage(UserId) {
+
+        var users = JSON.parse(localStorage.getItem('userData'));
+        if (users != null) {
+            users.splice(users.findIndex(a => a.id === UserId), 1)
+            localStorage.setItem('userData', JSON.stringify(users));
+        }
+    }
+
+
+    function bindUserData() {
+        var users = JSON.parse(localStorage.getItem('userData'));
+        if (users != null) {
+            document.getElementById('tblbody').innerHTML = "";
+            users.forEach(function (item, index) {
+                debugger;
+                var btnEditId = "btnedit" + item.id;
+                var btnDeleteId = "btndelete" + item.id;
+                var tableRow = "<tr Id='" + item.id + "'   data-CustomerID='" + item.id + "'   data-fullname='" + item.fullname + "' data-username='" + item.username + "' data-address='" + item.address + "' data-city='" + item.city + "' data-email='" + item.email + "' data-phone='" + item.phone + "' data-password='" + item.password + "' data-confirmpassword='" + item.confirmpassword + "' data-date='" + item.date + "'>"
+                    + "<td class='td-data'>" + item.id + "</td>"
+                    + "<td class='td-data'>" + item.fullname + "</td>"
+                    + "<td class='td-data'>" + item.username + "</td>"
+                    + "<td class='td-data'>" + item.address + "</td>"
+                    + "<td class='td-data'>" + item.city + "</td>"
+                    + "<td class='td-data'>" + item.email + "</td>"
+                    + "<td class='td-data'>" + item.phone + "</td>"
+                    + "<td class='td-data'>" + item.password + "</td>"
+                    + "<td class='td-data'>" + item.confirmpassword + "</td>"
+                    + "<td class='td-data'>" + item.date + "</td>"
+                    + "<td class='td-data'>" +
+                    "<button id='" + btnEditId + "' class='btn btn-info btn-xs btn-editcustomer' onclick='showEditRow(" + item.id + ")'><i class='fa fa-pencil' aria-hidden='true'></i>Edit</button>" +
+                    "<button id='" + btnDeleteId + "' class='btn btn-danger btn-xs btn-deleteCustomer' onclick='deleteRow(" + item.id + ")'><i class='fa fa-trash' aria-hidden='true'>Delete</button>"
+                    + "</td>"
+                    + "</tr>";
+                document.getElementById('tblbody').innerHTML += tableRow;
+            })
+        }
+        var AddRow = "<tr>"
+            + "<td class='td-data'></td>"
+            + "<td class='td-data'><input type='text' id='txtfullname' placeholder='fullname..'></td>"
+            + "<td class='td-data'><input type='text' id='txtusername' placeholder='username..'></td>"
+            + "<td class='td-data'><input type='text' id='txtaddress' placeholder='address..'></td>"
+            + "<td class='td-data'><input type='text' id='txtcity' placeholder='city..'></td>"
+            + "<td class='td-data'><input type='email' id='txtemail' placeholder='email..'></td>"
+            + "<td class='td-data'><input type='tel' id='txtphone' placeholder='phone..'></td>"
+            + "<td class='td-data'><input type='password' id='txtpassword' placeholder='password..'></td>"
+            + "<td class='td-data'><input type='password' id='txtconfirmpassword' placeholder='confirmpassword..'></td>"
+            + "<td class='td-data'><input type='text' id='txtdate' placeholder='date..'></td>"
+            + "<td class='td-data'>" + "<button id= 'btnaddCustomer' onclick='addUser()' class='btn btn-success'> <i class='fa fa-plus-circle' aria-hidden='true'></i>Add</button>" + "</td>"
+            + "</tr>";
+        document.getElementById('tblbody').innerHTML += AddRow;
+    }
+
+    function GetUserID() {
+        const ID = Date.now();
+        return ID;
+    }
+
+    function addUser() {
+        var userId = GetUserID();
+        var fullname = document.getElementById("txtfullname").value;
+        if (!fullname) {
+            alert('Please enter full name!')
+            return false;
+        }
+        var username = document.getElementById("txtusername").value;
+        if (!username) {
+            alert('Please enter user name!')
+            return false;
+        }
+        var address = document.getElementById("txtaddress").value;
+        if (!address) {
+            alert('Please enter address!')
+            return false;
+        }
+        var city = document.getElementById("txtcity").value;
+        if (!city) {
+            alert('Please enter city!')
+            return false;
+        }
+        var email = document.getElementById("txtemail").value;
+        if (!email) {
+            alert('Please enter email!')
+            return false;
+        }
+        var emailfilter = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (!emailfilter.test(email)) {
+            alert('Please enter a valid email address!');
+            return false;
+        }
+        var phone = document.getElementById("txtphone").value;
+        if (!phone) {
+            alert('Please enter phone!')
+            return false;
+        }
+        var password = document.getElementById("txtpassword").value;
+        if (!password) {
+            alert('Please enter password!')
+            return false;
+        }
+        var confirmpassword = document.getElementById("txtconfirmpassword").value;
+        if (!confirmpassword) {
+            alert('Please enter confirm password!')
+            return false;
+        }
+        var date = document.getElementById("txtdate").value;
+        if (!date) {
+            alert('Please enter date!')
+            return false;
+        }
+
+
+        var userObj = {
+            "id": userId,
+            "fullname": fullname,
+            "username": username,
+            "address": address,
+            "city": city,
+            "email": email,
+            "phone": phone,
+            "password": password,
+            "confirmpassword": confirmpassword,
+            "date": date
+        };
+        addUserDataToLocalStorage(userObj);
+        document.getElementById('txtfullname').value = "";
+        document.getElementById('txtusername').value = "";
+        document.getElementById('txtaddress').value = "";
+        document.getElementById('txtcity').value = "";
+        document.getElementById('txtemail').value = "";
+        document.getElementById('txtphone').value = "";
+        document.getElementById('txtpassword').value = "";
+        document.getElementById('txtconfirmpassword').value = "";
+        document.getElementById('txtdate').value = "";
+        bindUserData();
+    };
+
+    function showEditRow(UserID) {
+        var userRow = document.getElementById(UserID); //this gives tr of  whose button was clicked
+        var trdata = userRow.querySelectorAll(".td-data");
+        /*returns array of all elements with
+        "row-data" class within the row with given id*/
+        var userID = trdata[0].innerHTML;
+        var userfullname = trdata[1].innerHTML;
+        var userusername = trdata[2].innerHTML;
+        var useraddress = trdata[3].innerHTML;
+        var usercity = trdata[4].innerHTML;
+        var useremail = trdata[5].innerHTML;
+        var userphome = trdata[6].innerHTML;
+        var userpassword = trdata[7].innerHTML;
+        var userconfirmpassword = trdata[8].innerHTML;
+        var userdate = trdata[9].innerHTML;
+
+        trdata[0].innerHTML = '<input name="txtuserid"  disabled id="txtuserid" value="' + userID + '"/>';
+        trdata[1].innerHTML = '<input name="txtfullname" id="txtfullname" value="' + userfullname + '"/>';
+        trdata[2].innerHTML = '<input name="txtusername" id="txtusername" value="' + userusername + '"/>';
+        trdata[3].innerHTML = '<input name="txtaddress" id="txtaddress" value="' + useraddress + '"/>';
+        trdata[4].innerHTML = '<input name="txtcity" id="txtcity" value="' + usercity + '"/>';
+        trdata[5].innerHTML = '<input name="txtemail" id="txtemail" value="' + useremail + '"/>';
+        trdata[6].innerHTML = '<input name="txtphone" id="txtphone" value="' + userphome + '"/>';
+        trdata[7].innerHTML = '<input name="txtpassword" id="txtpassword" value="' + userpassword + '"/>';
+        trdata[8].innerHTML = '<input name="txtconfirmpassword" id="txtconfirmpassword" value="' + userconfirmpassword + '"/>';
+        trdata[9].innerHTML = '<input name="txtdate" id="txtdate" value="' + userdate + '"/>';
+        
+
+        trdata[10].innerHTML =
+            "<button class='btn btn-primary btn-xs btn-updateCustomer' onclick='updateUser(" + userID + ")'>" +
+            "<i class='fa fa-pencil' aria-hidden='true'></i>Update</button>"
+            + "<button class='btn btn-warning btn-xs btn-cancelupdate' onclick='cancel(" + userID + ")'><i class='fa fa-times' aria-hidden='true'></i>Cancel</button>"
+            + "<button class='btn btn-danger btn-xs btn-deleteCustomer' onclick='deleteUser(" + userID + ")'>"
+            + "<i class='fa fa-trash' aria-hidden='true'></i>Delete</button>"
+    }
+    function cancel(UserID) {
+        debugger;
+        var btneditId = "btnedit" + UserID;
+        var btndeleteId = "btndelete" + UserID;
+
+        var CustomerRow = document.getElementById(UserID); //this gives tr of  whose button was clicked
+        var data = CustomerRow.querySelectorAll(".td-data");
+
+        var fullname = CustomerRow.getAttribute("data-fullname");
+        var username = CustomerRow.getAttribute("data-username");
+        var address = CustomerRow.getAttribute("data-address");
+        var city = CustomerRow.getAttribute("data-city");
+        var email = CustomerRow.getAttribute("data-email");
+        var phone = CustomerRow.getAttribute("data-phone");
+        var password = CustomerRow.getAttribute("data-password");
+        var confirmpassword = CustomerRow.getAttribute("data-confirmpassword");
+        var date = CustomerRow.getAttribute("data-date");
+
+        data[0].innerHTML = UserID;
+        data[1].innerHTML = fullname;
+        data[2].innerHTML = username;
+        data[3].innerHTML = address;
+        data[4].innerHTML = city;
+        data[5].innerHTML = email;
+        data[6].innerHTML = phone;
+        data[7].innerHTML = password;
+        data[8].innerHTML = confirmpassword;
+        data[9].innerHTML = date;
+        var actionbtn = "<button id='" + btneditId + "' class='btn btn-info btn-xs btn-editcustomer' onclick='showEditRow(" + UserID + ")'><i class='fa fa-pencil' aria-hidden='true'></i>Edit</button>" +
+            "<button id='" + btndeleteId + "' class='btn btn-danger btn-xs btn-deleteCustomer' onclick='deleteRow(" + UserID + ")'><i class='fa fa-trash' aria-hidden='true'>Delete</button>"
+        data[5].innerHTML = actionbtn;
+    }
+    function updateUser(UserID) {
+        var userRow = document.getElementById(UserID); //this gives tr of  whose button was clicked
+        var data = userRow.querySelectorAll(".td-data");
+        var fullname = data[1].querySelector("#txtfullname").value;
+        var username = data[1].querySelector("#txtusername").value;
+        var address = data[1].querySelector("#txtaddress").value;
+        var city = data[1].querySelector("#txtcity").value;
+        var email = data[2].querySelector("#txtemail").value;
+        var phone = data[3].querySelector("#txtphone").value;
+        var password = data[4].querySelector("#txtpassword").value;
+        var confirmpassword = data[1].querySelector("#txtconfirmpassword").value;
+        var date = data[1].querySelector("#txtdate").value;
+        var userObj = {
+            "id": UserID,
+            "fullname": fullname,
+            "username": username,
+            "address": address,
+            "city": city,
+            "email": email,
+            "phone": phone,
+            "password": password,
+            "confirmpassword": confirmpassword,
+            "date": date
+        };
+        updateDataToLocalStorage(userObj);
+        bindUserData();
+    }
+    function deleteRow(UserID) {
+        deletedataFromLocalStorage(UserID);
+        bindUserData();
+    }
+</script>
+
+</body>
+</html>

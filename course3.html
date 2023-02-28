@@ -1,0 +1,190 @@
+<html>
+    <head>
+        <title>Java Course</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+        <style>
+              .dl {
+    color: black;
+    background-color: #f7c9a9;
+    text-align: center;
+    font-size: 30px;
+  }
+  table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+    font-family: sans-serif;
+  }
+  td, th {
+    border: 1px solid brown;
+    padding: 5px;
+    text-align: center;
+  }
+  th {
+    background-color: lightgrey;
+  }
+  /* Memberi warna pada baris yg ganjil */
+   tr:nth-child(odd) {
+    background-color: whitesmoke;
+  } 
+  /* Memberi warna pada baris yg ganjil */
+  /* tr:nth-child(even) {
+    background-color: whitesmoke;
+  } */
+  tr:hover {
+    background-color: #f7c9a9;
+  }
+  .l {
+    background-image: url(background.avif);
+    background-position: bottom;
+    background-size: contain;
+    height: 900px;  
+    background-repeat: no-repeat;
+  }
+  .l h1 {
+    color: black;
+    margin-top: 30px;
+    font-family: "Sofia", sans-serif;
+    font-size: 30px;
+    text-shadow: 3px 3px 3px #ababab;
+  }
+        </style>
+
+    <script>
+    $( function() {
+      $( "#dialog" ).dialog();
+    } );
+    </script>
+    </head>
+
+    <body>
+        <div class="medsos">
+            <div class="container">
+                <ul>
+                    <li class="dropdown">
+                        <i id="logo" class="fa fa-graduation-cap"></i>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Contact</a>
+                        <div class="dropdown-content">
+                            <a href="mailto:sandi.say1203@gmail.com?Subject=Hello! I want to join course">Email</a>
+                            <a href="whatsapp://send?text=Phone = +6281339838379">Whatsapp</a>
+                        </div>
+                        </li>
+            
+                        <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Social Media</a>
+                        <div class="dropdown-content">
+                            <a href="https://www.youtube.com/@eduCLaaS">Youtube</a>
+                            <a href="https://www.instagram.com/educlaas.in/?hl=id">Instagram</a>
+                        </div>
+                        </li>
+        
+                </ul>
+            </div>
+        </div>
+        
+        
+        <header>
+            <div class="container">
+                <h1>ABC Learning Center</h1>
+                <ul>
+                    <li><a id="home" href="index.html">HOME</a></li>
+                    <li><a id="links" href="aboutus.html">ABOUT US</a></li>
+                    <li><a id="links" href="course.html">COURSE </a></li>
+                    <li><a id="links" href="privacy.html">PRIVACY</a></li>
+                    <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">ACCOUNT</a>
+                    <div class="dropdown-content">
+                        <a href="signup.html">Sign Up</a>
+                        <a href="signin.html">Sign in</a>
+                    </div>
+                    </li>
+                    <li><a id="links" href="sitemap.html">SITEMAP</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <div id="dialog" title="Information">
+            <p>Choose a course schedule according to where you live now. To facilitate the teacher in learning, because the place can be determined to facilitate transportation.
+                
+                Dialog windows can be moved, resized and closed with the with the &apos;x&apos; icon.</p>
+          </div>
+
+        <div class="l">
+            <br>
+        <div class="schedule">
+            <h2 class="dl">Schedule C++ Corses</h2><br>
+            <table>
+                <th>City</th>
+                <th>Day</th>
+                <th>Teacher</th>
+                <th>Time</th>
+                <th>Time Sharing</th>
+
+                <tr>
+                    <td>Denpasar and Gianyar</td>
+                    <td>Monday and Wednesday</td>
+                    <td>Mrs. Dian and Mrs. Tina</td>
+                    <td>08.00 - 13.00</td>
+                    <td><ul>
+                        <li>08.00 - 09.30</li>
+                        <li>10.00 - 11.30</li>
+                        <li>11.30 - 13.00</li>
+                    </ul></td>
+                </tr>
+
+                <tr>
+                    <td>Badung and Tabanan</td>
+                    <td>Tuesday and Thursday</td>
+                    <td>Mr. Arjun and Mr. Nakula</td>
+                    <td>08.00 - 13.00</td>
+                    <td><ul>
+                        <li>08.00 - 09.30</li>
+                        <li>10.00 - 11.30</li>
+                        <li>11.30 - 13.00</li>
+                    </ul></td>
+                </tr>
+
+                <tr>
+                    <td>Another City</td>
+                    <td>Friday and Saturday</td>
+                    <td>Mr. Sadewa, Mr. Heri, and Mrs. Putri</td>
+                    <td>08.00 - 14.30</td>
+                    <td><ul>
+                        <li>08.00 - 09.30</li>
+                        <li>10.00 - 11.30</li>
+                        <li>11.30 - 13.00</li>
+                        <li>13.00 - 14.30</li>
+                    </ul></td>
+                </tr>
+
+                <tr>
+                    <td>Another Province</td>
+                    <td>Monday</td>
+                    <td>Mrs. Siska, Mr. Putra, and Mr. Indra</td>
+                    <td>08.00 - 13.00</td>
+                    <td><ul>
+                        <li>08.00 - 09.30</li>
+                        <li>10.00 - 11.30</li>
+                        <li>11.30 - 13.00</li>
+                    </ul></td>
+                </tr>
+            </table>
+            <br>
+        </div>
+        <br>
+        
+        <h1>Choose according to your spare time. So that your schedule does not collide.</h1>
+        <h1>Good Luck !! :) </h1>
+        </div>
+    </body>
+</html>

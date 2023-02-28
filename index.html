@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <!-- <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>ABC Learning Center</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> -->
+
+    <style>
+    .toggler {
+      width: 500px;
+      height: 200px;
+      margin-left: 100px;
+      margin-bottom: 10px;
+    }
+    #button {
+      padding: .5em 1em;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+    #effect {
+      position: relative;
+      width: 150%;
+      height: 100%;
+      padding: 0.4em;
+    }
+    #effect h3 {
+      margin: 0;
+      padding: 0.4em;
+      text-align: center;
+      font-size: 25px;
+      font-family: "Lucida Handwriting";
+    }
+    #effect p {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 20px;
+    }
+    #effectTypes {
+        margin-left: 100px;
+        padding: 5px;
+    }
+
+
+#panel, #flip {
+  padding: 5px;
+  text-align: center;
+  background: rgb(180,88,58);
+  background: linear-gradient(130deg, rgba(180,88,58,1) 0%, rgba(231,94,20,0.7567401960784313) 50%, rgba(252,148,69,1) 100%);
+  border: solid 1px #080808;
+}
+#flip {
+  font-size: 25px;
+}
+#panel {
+  padding: 50px;
+  display: none;
+  font-size: 40px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+    </style>
+
+    <script>
+        $( function() {
+    // run the currently selected effect
+    function runEffect() {
+      // get effect type from
+      var selectedEffect = $( "#effectTypes" ).val();
+ 
+      // Most effect types need no options passed by default
+      var options = {};
+      // some effects have required parameters
+      if ( selectedEffect === "scale" ) {
+        options = { percent: 50 };
+      } else if ( selectedEffect === "size" ) {
+        options = { to: { width: 200, height: 60 } };
+      }
+ 
+      // Run the effect
+      $( "#effect" ).toggle( selectedEffect, options, 500 );
+    };
+ 
+    // Set effect from select menu value
+    $( "#button" ).on( "click", function() {
+      runEffect();
+    });
+  } );
+
+
+  $(document).ready(function(){
+  $("#flip").click(function(){
+    $("#panel").slideDown("slow");
+  });
+  });
+
+  $(document).ready(function(){
+  $("#flip").click(function(){
+    $("#panel").slideUp("slow");
+  });
+  });
+    </script>
+</head>
+
+<body>
+
+    <div class="medsos">
+        <div class="container">
+            <ul>
+                <li class="dropdown">
+                    <i id="logo" class="fa fa-graduation-cap"></i>
+                </li>
+                <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Contact</a>
+                <div class="dropdown-content">
+                    <a href="mailto:sandi.say1203@gmail.com?Subject=Hello! I want to join course">Email</a>
+                    <a href="whatsapp://send?text=Phone = +6281339838379">Whatsapp</a>
+                </div>
+                </li>
+    
+                <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Social Media</a>
+                <div class="dropdown-content">
+                    <a href="https://www.youtube.com/@eduCLaaS">Youtube</a>
+                    <a href="https://www.instagram.com/educlaas.in/?hl=id">Instagram</a>
+                </div>
+                </li>
+    
+            </ul>
+        </div>
+    </div>
+    
+    <header>
+        <div class="container">
+            <h1>ABC Learning Center</h1>
+            <ul>
+                <li><a id="home" href="index.html">HOME</a></li>
+                <li><a id="links" href="aboutus.html">ABOUT US</a></li>
+                <li><a id="links" href="course.html">COURSE </a></li>
+                <li><a id="links" href="privacy.html">PRIVACY</a></li>
+                <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">ACCOUNT</a>
+                <div class="dropdown-content">
+                    <a href="signup.html">Sign Up</a>
+                    <a href="signin.html">Sign in</a>
+                </div>
+                </li>
+                <li><a id="links" href="sitemap.html">SITEMAP</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div id="flip">Click to slide down panel</div>
+    <div id="panel">Hello Everyone. This is ABC Learning Center</div>
+
+    <!-- banner -->
+<section class="banner">
+<h2>WELCOME TO MY WEBSITE</h2>
+</section>
+<br>
+
+<!-- Effect -->
+<div class="toggler">
+    <div id="effect" class="ui-widget-content ui-corner-all">
+      <h3 class="ui-widget-header ui-corner-all">ABC Learning Center</h3>
+      <p>
+        Come on, join us at the ABC Learning Center. Want to be able to program and create web, the solution is to join us immediately. In a short time and without beating around the bush, you will be able to become an IT. Hurry because seats are limited. New registrants will get a discount.       
+      </p>
+    </div>
+  </div>
+   
+  <select name="effects" id="effectTypes">
+    <option value="blind">Blind</option>
+    <option value="bounce">Bounce</option>
+    <option value="clip">Clip</option>
+    <option value="drop">Drop</option>
+    <option value="explode">Explode</option>
+    <option value="fade">Fade</option>
+    <option value="fold">Fold</option>
+    <option value="highlight">Highlight</option>
+    <option value="puff">Puff</option>
+    <option value="pulsate">Pulsate</option>
+    <option value="scale">Scale</option>
+    <option value="shake">Shake</option>
+    <option value="size">Size</option>
+    <option value="slide">Slide</option>
+  </select>
+   
+  <button id="button" class="ui-state-default ui-corner-all">Run Effect</button>
+
+  <br><br>
+
+
+<!-- Gambar Slide -->
+<div class="slideshow-container">
+        
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 4</div>
+      <img src="https://i0.wp.com/1.bp.blogspot.com/-xVr5aSYhkT4/U-tw2mFfuMI/AAAAAAAAA6k/ITqW3p2L9BE/s1600/programmer.jpg?resize=400%2C286" style="width:100%">
+      <div class="text">Image one</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 4</div>
+      <img src="https://qubisastorage.blob.core.windows.net/files/articles/141/images/img480/141-20210304225402047.jpg" style="width:100%">
+      <div class="text">Image Two</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 4</div>
+      <img src="https://qubisastorage.blob.core.windows.net/files/articles/galleries/141/images/img/141-20210304224430535.jpg" style="width:100%">
+      <div class="text">Image Three</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">4 / 4</div>
+        <img src="https://www.tipspintar.com/wp-content/uploads/2019/06/Apa-Itu-Coding.jpg" style="width:100%">
+        <div class="text">Caption Three</div>
+      </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+    
+    </div>
+    <br>
+    
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+      <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+<br>
+
+<!-- Footer -->
+    <div class="c">
+        <div class="h">
+            <!-- Posisi Header -->
+        </div>
+        <div class="content">
+            <center>
+            <p>ABC Learning Center opens IT courses for all ages and areas of residence. Come register before the seats run out.
+                Flexible time, Experienced teachers and guaranteed knowledge, Affordable fees, and so on.</p>
+            <p>The photo above is a shadow of how the form of coding and so on. ABC Learning Center offers 4 courses. If you are curious, please see the details on our website. Enjoy reading and I hope you are interested in this course</p>
+            </center>
+        </div>
+        <div class="footer">
+            <div class="row">
+                <div class="footer-col">
+                    <h1 class="z">ABC L.C</h1>
+                    <br>
+                    <h4>Conatct Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.youtube.com/@eduCLaaS"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/educlaas.in/?hl=id"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/eduCLaaSIndonesia/"><i class="fab fa-facebook"></i></a>
+                        <a href="whatsapp://send?text=Phone = +6281339838379"><i class="fab fa-whatsapp"></i></a>
+                        <!-- <a href="#"><i class="fab fa-linkedin-in"></i></a> -->
+                    </div>
+                    
+                </div>
+
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="aboutus.html">Description</a></li>
+                        <li><a href="aboutus.html">Purpose</a></li>
+                        <li><a href="aboutus.html">Image and Video</a></li>
+                        <li><a href="aboutus.html">Location</a></li>
+                        <hr>
+                        <li><a href="#">Monday - Friday</a></li>
+                        <li><a href="#">08.00 - 21.00</a></li>
+                        <li><a href="#">Saturday</a></li>
+                        <li><a href="#">08.00 - 15.00</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Course</h4>
+                    <ul>
+                        <li><a href="course.html">Courses</a></li>
+                        <li><a href="course.html">Price</a></li>
+                        <li><a href="course.html">Schedule</a></li>
+                        <li><a href="course.html">Social Media</a></li>
+                        <hr>
+                        <li><a href="#">Jl. Sedap Malam Gg. Bugbugan No. 9</a></li>
+                        <li><a href="#">Kesiman Petilan Denpasar Timur</a></li>
+                        <li><a href="#">Bali Indonesia</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Why Choose Abc Learning Center</h4>
+                    <ul>
+                        <li><a href="#">Relaxed learning</a></li>
+                        <li><a href="#">Flexible time</a></li>
+                        <li><a href="#">Learn directly practice</a></li>
+                        <li><a href="#">Experienced teacher</a></li>
+                        <hr>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <center>
+            <p class="s"><b>Copyright © 2023 - Sandi Auliya. All Rights Reserved.</b></p>
+            </center>
+        </div>
+    </div>
+</body>
+
+</html>

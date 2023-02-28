@@ -1,0 +1,321 @@
+<html>
+    <head>
+        <!-- <meta charset="utf-8"> -->
+        <meta name="keywords" content="Registration, Form, Course" />
+        <meta name="description"
+            content="This document is an example of JavaScript Form Validation using a sample registration form. " />
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="registration.js"></script>
+
+
+
+        <title>Sign Up</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+
+        <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script> -->
+
+        <style>
+ .latar {
+    display: flex;
+    height: 125vh;
+    justify-content: center;
+    align-self: center;
+    background: rgb(233,75,13);
+    background: linear-gradient(130deg, rgba(233,75,13,1) 0%, rgba(251,124,45,1) 35%, rgba(246,153,98,1) 100%);
+    padding: 20px;
+}
+.co {
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 5px;
+
+}
+.co .ti {
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+.co .ti::before {
+    content: '';
+    position: absolute;
+    left: 43%;
+    bottom: 0;
+    height: 3px;
+    width: 100px;
+    background: rgb(233,75,13);
+    background: linear-gradient(130deg, rgba(233,75,13,1) 0%, rgba(251,124,45,1) 35%, rgba(246,153,98,1) 100%);
+}
+.co form .user-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+form .user-details .input-box {
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+.user-details .input-box .details {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.user-details .input-box input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+    border-color: rgb(233,75,13);
+}
+/* form .gender-details .gender-title {
+    font-size: 20px;
+    font-weight: 500;
+}
+form .gender-details .category {
+    display: flex;
+    width: 80%;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+.gender-details .category label {
+    display: flex;
+    align-items: center;
+}
+.gender-details .category .dot {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background: #d9d9d9;
+    margin-right: 10px;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+}
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two {
+    border-color: #d9d9d9;
+    background: rgb(233,75,13);
+}
+form input[type="radio"] {
+    display: none;
+} */
+form .button {
+    height: 45px;
+    margin: 45px 0;
+}
+form .button input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: rgb(233,75,13);
+    background: linear-gradient(130deg, rgba(233,75,13,1) 0%, rgba(251,124,45,1) 35%, rgba(246,153,98,1) 100%);
+}
+form .button input:hover {
+    background: rgb(233,75,13);
+    background: linear-gradient(-130deg, rgba(233,75,13,1) 0%, rgba(251,124,45,1) 35%, rgba(246,153,98,1) 100%);
+}
+/* @media (max-height: 584px) {
+    .co {
+        max-width: 100%;
+    }
+    form .user-details .input-box {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    form .gender-details .category {
+        width: 100%;
+    }
+    .co form .user-details {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+} */
+
+/* fieldset {
+      border: 0;
+      font-size: 16px;
+    }
+    label {
+      display: block;
+      margin: 1px 0 5px 0;
+    }
+    .overflow {
+      height: 200px;
+    } */
+
+        </style>
+
+<script>
+    // $( function() {
+    //   $( "#date" ).date();
+    // } );
+    
+    // $( function() {
+    // $( "#speed" ).selectmenu();
+    // } );
+    </script>
+    </head>
+
+    <body>
+        <div class="medsos">
+            <div class="container">
+                <ul>
+                    <li class="dropdown">
+                        <i id="logo" class="fa fa-graduation-cap"></i>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Contact</a>
+                        <div class="dropdown-content">
+                            <a href="mailto:sandi.say1203@gmail.com?Subject=Hello! I want to join course">Email</a>
+                            <a href="whatsapp://send?text=Phone = +6281339838379">Whatsapp</a>
+                        </div>
+                        </li>
+            
+                        <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Social Media</a>
+                        <div class="dropdown-content">
+                            <a href="https://www.youtube.com/@eduCLaaS">Youtube</a>
+                            <a href="https://www.instagram.com/educlaas.in/?hl=id">Instagram</a>
+                        </div>
+                        </li>
+        
+                </ul>
+            </div>
+        </div>
+        
+        
+        <header>
+            <div class="container">
+                <h1>ABC Learning Center</h1>
+                <ul>
+                    <li><a id="home" href="index.html">HOME</a></li>
+                    <li><a id="links" href="aboutus.html">ABOUT US</a></li>
+                    <li><a id="links" href="course.html">COURSE </a></li>
+                    <li><a id="links" href="privacy.html">PRIVACY</a></li>
+                    <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">ACCOUNT</a>
+                    <div class="dropdown-content">
+                        <a href="signup.html">Sign Up</a>
+                        <a href="signin.html">Sign in</a>
+                    </div>
+                    </li>
+                    <li><a id="links" href="sitemap.html">SITEMAP</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <body onload="document.registration.fullname.focus();">
+            <header class="latar">
+                <div class="co">
+                    <center>
+                    <div class="ti">Sign Up</div> 
+                    </center> <br>
+                    <form name='registration' onSubmit="return formValidation();" method="GET" action="thankyou.html" autocomplete="off">
+                        <div class="user-details">
+                            <div class="input-box">
+                                <span for="fullname" class="details">Full Name</span>
+                                <input type="text" name="fullname" id="fullname" placeholder="Enter your name" required autofocus minlength="2" maxlength="30">
+                            </div>
+        
+                            <div class="input-box">
+                                <span for="username" class="details">User Name</span>
+                                <input type="text" name="username" id="username" placeholder="Enter your user name" required minlength="2" maxlength="20">
+                            </div>
+        
+                            <div class="input-box">
+                                <span for="address" class="details">Address Street</span>
+                                <input type="text" name="address" id="address" placeholder="Enter your address" required> 
+                            </div>
+                            
+                            <div class="input-box">
+                                <span for="city" class="details">City</span>
+                                <input type="text" name="city" id="city" placeholder="Enter your city" required>
+                            </div>   
+        
+                            <div class="input-box">
+                                <span for="email" class="details">Email</span>
+                                <input type="email" name="email" id="email" placeholder="Enter your email" required>
+                            </div>
+        
+                            <div class="input-box">
+                                <span for="phone" class="details">Phone Number</span>
+                                <input type="tel" name="phone" id="phone" placeholder="Enter your number" required pattern="(\+62|62|0)8[1-9][0-9]{6,9}$">
+                            </div>
+        
+                            <div class="input-box">
+                                <span for="password" class="details">Password</span>
+                                <input type="password" name="password" id="password" placeholder="Enter your password" required>
+                            </div>
+        
+                            <div class="input-box">
+                                <span for="confirmpassword" class="details">Confirm Password</span>
+                                <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Confirm your password" required>
+                            </div>
+        
+                            <div class="input-box">
+                                <span for="date" class="details">Date</span>
+                                <input type="text" name="date" id="date" placeholder="Enter date" required>
+                            </div>
+        
+                            <!-- <div class="input-box">
+                            <fieldset>
+                                <label for="speed">Schedule Courses</label>
+                                <select name="speed" id="speed">
+                                  <option disabled selected>Please pick one</option>  
+                                  <option selected="selected">Java Course</option>
+                                  <option>Web Design Course</option>
+                                  <option>C++ Course</option>
+                                  <option>PHP Course</option>
+                                </select>
+                            </div> -->
+                        </div>
+        
+                        <!-- <div class="gender-details">
+                            <input type="radio" name="gender" id="dot-1">
+                            <input type="radio" name="gender" id="dot-2">
+                            
+                            <span class="gender-title">Gender</span>
+                            <div class="category">
+                                <label for="dot-1">
+                                    <span class="dot one"></span>
+                                    <span class="gender">Male</span>
+                                </label>
+        
+                                <label for="dot-2">
+                                    <span class="dot two"></span>
+                                    <span class="gender">Female</span>
+                                </label>
+                            </div>
+                        </div> -->
+        
+                        <div class="button">
+                            <input type="submit" name="submit" value="Submit">
+                        </div>
+                    </form>
+                </div>
+            </header>
+
+    </body>
+</html>

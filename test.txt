@@ -1,0 +1,32 @@
+<h1 class="title">Sitemap</h1> <br>
+
+<p>The following is the ABC-learningcenter.com Table of Contents for those interested in taking an IT course. Starting from how to introduce what IT is to entering into making programs. All the tricks so that the web and applications can look good will be discussed in this course.
+
+For friends who are experiencing difficulties in the world of IT but want to develop themselves in the world of IT, let's take this course right now. Registration can go through Contact admin and directly on this website. Furthermore, please save this link to continue to get updates from the ABC Learning Center course, thank you.</p>
+
+<h3>Home</h3>
+        <ol>
+            <li><a href="index.html">Header</a></li>
+                <ul>
+                    <li><a href="index.html">Contact</a></li>
+                    <li><a href="index.html">Social Media</a></li>
+                </ul>
+            <li><a href="index.html">Navigation</a></li>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="course.html">Course</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="signup.html">Account</a></li>
+                    <ul>
+                        <li><a href="signup.html">Sign Up</a></li>
+                        <li><a href="signin.html">Sign In</a></li>
+                    </ul>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            <li><a href="index.html">Footer</a></li>
+        </ol>
+
+
+
+    

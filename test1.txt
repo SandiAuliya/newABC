@@ -1,0 +1,32 @@
+<h3>About Us</h3>
+        <ol>
+            <li><a href="aboutus.html">ABC Learning Center description</a></li>
+            <li><a href="aboutus.html">Purpose of ABC Learning Center</a></li>
+            <li><a href="aboutus.html">Image and video</a></li>
+            <li><a href="aboutus.html">Location of course</a></li>
+            <li><a href="aboutus.html">Contact</a></li>
+        </ol>
+
+<h3>Course</h3>
+        <ol>
+            <li><a href="course.html">Kinds of courses</a></li>
+            <li><a href="course.html">Price for various courses</a></li>
+            <li><a href="course.html">Duration of corse</a></li>
+            <li><a href="course.html">Course schedule</a></li>
+        </ol>
+
+<h3>Privacy Policy</h3>
+        <ol>
+            <li><a href="privacy.html">Privacy Policy of ABC Learning Center</a></li>
+        </ol>
+        <br>
+        <h3>Account</h3>
+        <ol>
+            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="signin.html">Sign In</a></li>
+        </ol>
+        <br>
+        <h3>Sitemap</h3>
+        <ol>
+            <li><a href="sitemap.html">Sitemap of ABC Learning Center website</a></li>
+        </ol>

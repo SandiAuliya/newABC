@@ -1,0 +1,191 @@
+<html>
+    <head>
+        <title>Sign In</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+        <style>
+.latar {
+    display: flex;
+    height: 90vh;
+    justify-content: center;
+    align-self: center;
+    background: rgb(233,75,13);
+    background: linear-gradient(130deg, rgba(233,75,13,1) 0%, rgba(251,124,45,1) 35%, rgba(246,153,98,1) 100%);
+    padding: 20px;
+}
+.co {
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+
+}
+.co .ti {
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+.co .ti::before {
+    content: '';
+    position: absolute;
+    left: 43%;
+    bottom: 0;
+    height: 3px;
+    width: 100px;
+    background: rgb(233,75,13);
+    background: linear-gradient(130deg, rgba(233,75,13,1) 0%, rgba(251,124,45,1) 35%, rgba(246,153,98,1) 100%);
+}
+.co form .user-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+form .user-details .input-box {
+    margin-bottom: 15px;
+    width: calc(100%);
+}
+.user-details .input-box .details {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.user-details .input-box input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+    border-color: rgb(233,75,13);
+}
+
+form .button {
+    height: 40px;
+    width: 100%;
+    margin: 40px 0;
+}
+form .button input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: rgb(233,75,13);
+    background: linear-gradient(130deg, rgba(233,75,13,1) 0%, rgba(251,124,45,1) 35%, rgba(246,153,98,1) 100%);
+}
+form .button input:hover {
+    background: rgb(233,75,13);
+    background: linear-gradient(-130deg, rgba(233,75,13,1) 0%, rgba(251,124,45,1) 35%, rgba(246,153,98,1) 100%);
+}
+.forget-pass a {
+    color: #16a085;
+    font-size: 12px;
+    margin-top: 3px;
+}
+.new a {
+    text-align: right;
+    color: #16a085;
+    font-size: 12px;
+    margin-top: 3px;
+}
+        
+        </style>
+    </head>
+    
+    <body>
+        <div class="medsos">
+            <div class="container">
+                <ul>
+                    <li class="dropdown">
+                        <i id="logo" class="fa fa-graduation-cap"></i>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Contact</a>
+                        <div class="dropdown-content">
+                            <a href="mailto:sandi.say1203@gmail.com?Subject=Hello! I want to join course">Email</a>
+                            <a href="whatsapp://send?text=Phone = +6281339838379">Whatsapp</a>
+                        </div>
+                        </li>
+            
+                        <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Social Media</a>
+                        <div class="dropdown-content">
+                            <a href="https://www.youtube.com/@eduCLaaS">Youtube</a>
+                            <a href="https://www.instagram.com/educlaas.in/?hl=id">Instagram</a>
+                        </div>
+                        </li>
+        
+                </ul>
+            </div>
+        </div>
+        
+        
+        <header>
+            <div class="container">
+                <h1>ABC Learning Center</h1>
+                <ul>
+                    <li><a id="home" href="index.html">HOME</a></li>
+                    <li><a id="links" href="aboutus.html">ABOUT US</a></li>
+                    <li><a id="links" href="course.html">COURSE </a></li>
+                    <li><a id="links" href="privacy.html">PRIVACY</a></li>
+                    <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">ACCOUNT</a>
+                    <div class="dropdown-content">
+                        <a href="signup.html">Sign Up</a>
+                        <a href="signin.html">Sign in</a>
+                    </div>
+                    </li>
+                    <li><a id="links" href="sitemap.html">SITEMAP</a></li>
+                </ul>
+            </div>
+        </header>
+
+
+        <header class="latar">
+            <div class="co">
+                <center>
+                <div class="ti">Sign In</div> 
+                </center> <br><br>
+                <form action="#" method="post" autocomplete="off">
+                    <div class="user-details">
+                        <div class="input-box">
+                            <span class="details">Email</span>
+                            <input type="email" placeholder="Enter your email" required>
+                        </div>
+    
+                        <div class="input-box">
+                            <span class="details">Password</span>
+                            <input type="password" placeholder="Enter your user password" required>
+                        </div>
+    
+                    
+                    <div class="button">
+                        <input type="submit" value="Login">
+                    </div>
+                    
+                    <div class="forget-pass">
+                        <a href="#">Forget Pass?</a>
+                        
+                    </div>
+                    <div class="new">
+                    <a href="signup.html">Don't have an account?</a>
+                    </div>
+
+                </form>
+            </div>
+        </header>
+    </body>
+</html>

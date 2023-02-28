@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Sitemap</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+        
+        <style>
+            .map {
+                background-color: rgb(248, 164, 125);
+            }
+            .map p {
+                margin-right: 20px;
+                margin-left: 20px;
+                font-size: 20px;
+            }
+            .map h3 {
+                margin-right: 20px;
+                margin-left: 20px;
+            }
+            .map ol {
+                margin-left: 50px;
+            }
+            ol li a {
+                font-size: 20px;
+            }
+            button {
+                margin-left: 10px;
+            }
+            h2 {
+                margin-left: 10px;
+            }
+        </style>
+
+        <script>
+    function loadDoc() {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+    document.getElementById("demo").innerHTML = this.responseText;
+  }
+    xhttp.open("GET", "test.txt");
+    xhttp.send();
+    }
+
+
+    function loadDoc1() {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+    document.getElementById("demo1").innerHTML = this.responseText;
+  }
+    xhttp.open("GET", "test1.txt");
+    xhttp.send();
+    }
+
+        </script>
+    </head>
+
+    <body>
+        <div class="medsos">
+            <div class="container">
+                <ul>
+                    <li class="dropdown">
+                        <i id="logo" class="fa fa-graduation-cap"></i>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Contact</a>
+                        <div class="dropdown-content">
+                            <a href="mailto:sandi.say1203@gmail.com?Subject=Hello! I want to join course">Email</a>
+                            <a href="whatsapp://send?text=Phone = +6281339838379">Whatsapp</a>
+                        </div>
+                        </li>
+            
+                        <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Social Media</a>
+                        <div class="dropdown-content">
+                            <a href="https://www.youtube.com/@eduCLaaS">Youtube</a>
+                            <a href="https://www.instagram.com/educlaas.in/?hl=id">Instagram</a>
+                        </div>
+                        </li>
+        
+                </ul>
+            </div>
+        </div>
+        
+        
+        <header>
+            <div class="container">
+                <h1>ABC Learning Center</h1>
+                <ul>
+                    <li><a id="home" href="index.html">HOME</a></li>
+                    <li><a id="links" href="aboutus.html">ABOUT US</a></li>
+                    <li><a id="links" href="course.html">COURSE </a></li>
+                    <li><a id="links" href="privacy.html">PRIVACY</a></li>
+                    <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">ACCOUNT</a>
+                    <div class="dropdown-content">
+                        <a href="signup.html">Sign Up</a>
+                        <a href="signin.html">Sign in</a>
+                    </div>
+                    </li>
+                    <li><a id="links" href="sitemap.html">SITEMAP</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <div class="map">
+            <br>
+            <div id="demo">
+                <h2>Click the button</h2>
+                <button type="button" onclick="loadDoc()">Click Me</button>
+                </div>
+        <br>
+        <div id="demo1">
+            <h2>Click the button again</h2>
+            <button type="button" onclick="loadDoc1()">Click Me</button>
+            </div>
+            <br>
+        </div>
+
+
+        <br><br>
+
+        <!-- Footer -->
+        <div class="c">
+          <div class="h">
+              <!-- Posisi Header -->
+          </div>
+          <div class="footer">
+              <div class="row">
+                  <div class="footer-col">
+                      <h1 class="z">ABC L.C</h1>
+                      <br>
+                      <h4>Conatct Us</h4>
+                      <div class="social-links">
+                          <a href="https://www.youtube.com/@eduCLaaS"><i class="fab fa-youtube"></i></a>
+                          <a href="https://www.instagram.com/educlaas.in/?hl=id"><i class="fab fa-instagram"></i></a>
+                          <a href="https://www.facebook.com/eduCLaaSIndonesia/"><i class="fab fa-facebook"></i></a>
+                          <a href="whatsapp://send?text=Phone = +6281339838379"><i class="fab fa-whatsapp"></i></a>
+                          <!-- <a href="#"><i class="fab fa-linkedin-in"></i></a> -->
+                      </div>
+                      
+                  </div>
+    
+                  <div class="footer-col">
+                      <h4>About Us</h4>
+                      <ul>
+                          <li><a href="aboutus.html">Description</a></li>
+                          <li><a href="aboutus.html">Purpose</a></li>
+                          <li><a href="aboutus.html">Image and Video</a></li>
+                          <li><a href="aboutus.html">Location</a></li>
+                          <hr>
+                          <li><a href="#">Monday - Friday</a></li>
+                          <li><a href="#">08.00 - 21.00</a></li>
+                          <li><a href="#">Saturday</a></li>
+                          <li><a href="#">08.00 - 15.00</a></li>
+                      </ul>
+                  </div>
+    
+                  <div class="footer-col">
+                      <h4>Course</h4>
+                      <ul>
+                          <li><a href="course.html">Courses</a></li>
+                          <li><a href="course.html">Price</a></li>
+                          <li><a href="course.html">Schedule</a></li>
+                          <li><a href="course.html">Social Media</a></li>
+                          <hr>
+                          <li><a href="#">Jl. Sedap Malam Gg. Bugbugan No. 9</a></li>
+                          <li><a href="#">Kesiman Petilan Denpasar Timur</a></li>
+                          <li><a href="#">Bali Indonesia</a></li>
+                      </ul>
+                  </div>
+    
+                  <div class="footer-col">
+                      <h4>Why Choose Abc Learning Center</h4>
+                      <ul>
+                          <li><a href="#">Relaxed learning</a></li>
+                          <li><a href="#">Flexible time</a></li>
+                          <li><a href="#">Learn directly practice</a></li>
+                          <li><a href="#">Experienced teacher</a></li>
+                          <hr>
+                          <li><a href="privacy.html">Privacy Policy</a></li>
+                      </ul>
+                  </div>
+    
+              </div>
+              <center>
+              <p class="s"><b>Copyright © 2023 - Sandi Auliya. All Rights Reserved.</b></p>
+              </center>
+          </div>
+      </div>
+    </body>
+</html>
